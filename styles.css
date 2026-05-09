@@ -594,6 +594,60 @@ h2 {
   color: rgba(255, 250, 240, 0.78);
 }
 
+.video-section {
+  padding-top: clamp(70px, 9vw, 112px);
+  background:
+    radial-gradient(circle at 78% 22%, rgba(215, 168, 82, 0.18), transparent 30%),
+    linear-gradient(180deg, var(--night), #0b1b2f 54%, var(--navy));
+}
+
+.video-layout {
+  display: grid;
+  grid-template-columns: 0.7fr 1.2fr;
+  gap: clamp(28px, 5vw, 70px);
+  align-items: center;
+}
+
+.video-copy h2 {
+  color: #fff8df;
+  font-size: clamp(2rem, 3.7vw, 3.4rem);
+}
+
+.video-copy p:not(.eyebrow) {
+  color: rgba(255, 250, 240, 0.76);
+  font-family:
+    "Hiragino Sans",
+    "Yu Gothic",
+    sans-serif;
+}
+
+.video-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #02050d;
+  border: 1px solid rgba(245, 217, 146, 0.5);
+  border-radius: var(--radius);
+  box-shadow:
+    0 32px 90px rgba(0, 0, 0, 0.42),
+    0 0 0 10px rgba(245, 217, 146, 0.07);
+}
+
+.video-frame::before {
+  position: absolute;
+  inset: 14px;
+  z-index: 1;
+  content: "";
+  border: 1px solid rgba(245, 217, 146, 0.16);
+  pointer-events: none;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .problem-grid,
 .feature-grid {
   display: grid;
@@ -956,7 +1010,8 @@ details p {
 
   .price-layout,
   .split,
-  .faq-layout {
+  .faq-layout,
+  .video-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1114,6 +1169,10 @@ details p {
 
   .section-heading {
     text-align: left;
+  }
+
+  .video-section {
+    padding-top: 64px;
   }
 
   h2 {
